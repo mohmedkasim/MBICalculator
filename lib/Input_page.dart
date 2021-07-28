@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:human_calculate/reusable_card.dart';
+import 'BottomButton.dart';
 import 'constents.dart';
 import 'icon_content.dart';
 
@@ -195,20 +196,9 @@ class _InputPageState extends State<InputPage> {
                 )),
               ],
             )),
-            GestureDetector(
+            BottomButton(
+              buttonTitle: 'CALCULATE',
               onTap: () => Navigator.pushNamed(context, '/result'),
-              child: Container(
-                child: Center(
-                    child: Text(
-                  'CALCULATE',
-                  style: kLargeButtonTextStyle,
-                )),
-                color: kBottomContainerColour,
-                margin: EdgeInsets.only(top: 10.0),
-                padding: EdgeInsets.only(bottom: 20.0),
-                width: double.infinity,
-                height: kBottomContainerHeight,
-              ),
             )
           ],
         ));
