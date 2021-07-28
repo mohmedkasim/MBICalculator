@@ -5,6 +5,17 @@ import 'package:human_calculate/reusable_card.dart';
 import 'BottomButton.dart';
 
 class ResultsPage extends StatelessWidget {
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  const ResultsPage(
+      {Key key,
+      @required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,12 +43,12 @@ class ResultsPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Normal',
+                          resultText.toUpperCase(),
                           style: kResultTextStyle,
                         ),
-                        Text('18.3', style: kBMITextStyle),
+                        Text(bmiResult, style: kBMITextStyle),
                         Text(
-                          'Your BMI result is quite low, you should eat more!',
+                          interpretation,
                           style: kBodyTextStyle,
                           textAlign: TextAlign.center,
                         )
